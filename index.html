@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PokeStore Frame</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/modal.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700&display=swap" rel="stylesheet"/> <!-- Google Fonts -->
+    <script src="https://kit.fontawesome.com/57eab43848.js" crossorigin="anonymous"></script> <!-- Font Awesome -->
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/site.webmanifest">
+  </head>
+  <body>
+    <section id="header">
+      <h1 class="poke-title">Pokestore</h1>
+      <nav class="navbar">
+        <div class="nav-search">
+          <input type="text" placeholder="Encontre o seu Pokemon!"><i class="fas fa-search nav-btn"></i></input>
+          <!-- <span class="nav-erro">Não encontrado!</span> -->
+        </div>
+        <button onclick="showCart()" class="nav-btn"><i class="fas fa-shopping-cart"></i></button>
+      </nav>
+    </section>
+    <section id="lista">
+      <div class="showcase">
+        <h2 class="showcase-title">Pokedex</h2>
+        <p class="showcase-subtitle">"Temos que comprar (isso eu sei...)"</p>
+        <div class="row">
+          <div id="showcase_item"></div>
+          <!-- <div class="showcase-item">
+            <img class="showcase-poke-img" src="./assets/img/example.jpg" alt="">
+            <ul>
+              <li><span class="showcase-poke-txt-1">Nome: </span><span class="showcase-poke-txt-2">Pikachu</span></li>
+              <li><span class="showcase-poke-txt-1">Id: </span><span class="showcase-poke-txt-2">#001</span></li>
+              <li><span class="showcase-poke-txt-1">Height: </span><span class="showcase-poke-txt-2">15</span></li>
+              <li><span class="showcase-poke-txt-1">Weight: </span><span class="showcase-poke-txt-2">70</span></li>
+            </ul>
+            <div class="showcase-footer">
+              <button class="showcase-poke-btn">Saiba mais</button>
+              <i class="fas fa-cart-plus tooltip"><span class="tooltiptext">Adicione ao carrinho!</span></i>
+            </div>
+          </div> -->
+        </div>
+        <button class="showcase-loadmore">Carregue mais...</button>
+      </div>
+    </section>
+    <section id="carrinho" style="display: none;">
+      <div class="showcase-cart">
+        <h2 class="showcase-cart-title">Carrinho</h2>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeCart()">&times;</a>
+        <div class="row-cart">
+          <div class="showcase-cart-item">
+            <p class="showcase-cart-empty">Nenhum item selecionado</p>
+          </div>
+          <div class="showcase-cart-item">
+            <img class="showcase-cart-img" src="./assets/img/example.jpg" alt="">
+            <p class="showcase-cart-txt">Nome: Bulbasaur</p>
+            <p class="showcase-cart-price"><b>R$&nbsp;</b>100,00</p>
+          </div>
+          <div class="showcase-cart-item">
+            <img class="showcase-cart-img" src="./assets/img/example2.jpg" alt="">
+            <p class="showcase-cart-txt">Nome: Bulbasaur</p>
+            <p class="showcase-cart-price"><b>R$&nbsp;</b>100,00</p>
+          </div>
+          <div class="showcase-cart-item">
+            <img class="showcase-cart-img" src="./assets/img/example.jpg" alt="">
+            <p class="showcase-cart-txt">Nome: Pikachu</p>
+            <p class="showcase-cart-price"><b>R$&nbsp;</b>1000,00</p>
+          </div>
+          <div class="showcase-cart-item">
+            <img class="showcase-cart-img" src="./assets/img/example.jpg" alt="">
+            <p class="showcase-cart-txt">Nome</p>
+            <p class="showcase-cart-price"><b>R$&nbsp;</b>10,00</p>
+          </div>
+          <div class="showcase-cart-item">
+            <img class="showcase-cart-img" src="./assets/img/example.jpg" alt="">
+            <p class="showcase-cart-txt">Nome</p>
+            <p class="showcase-cart-price"><b>R$&nbsp;</b>10,00</p>
+          </div>
+          <div class="showcase-cart-item">
+            <img class="showcase-cart-img" src="./assets/img/example.jpg" alt="">
+            <p class="showcase-cart-txt">Nome</p>
+            <p class="showcase-cart-price"><b>R$&nbsp;</b>10,00</p>
+          </div>
+          <div class="showcase-cart-item">
+            <img class="showcase-cart-img" src="./assets/img/example.jpg" alt="">
+            <p class="showcase-cart-txt">Nome</p>
+            <p class="showcase-cart-price"><b>R$&nbsp;</b>10,00</p>
+          </div>
+          <div class="showcase-cart-item">
+            <img class="showcase-cart-img" src="./assets/img/example.jpg" alt="">
+            <p class="showcase-cart-txt">Nome</p>
+            <p class="showcase-cart-price"><b>R$&nbsp;</b>10,00</p>
+          </div>
+          <div class="showcase-cart-item">
+            <img class="showcase-cart-img" src="./assets/img/example.jpg" alt="">
+            <p class="showcase-cart-txt">Nome</p>
+            <p class="showcase-cart-price"><b>R$&nbsp;</b>10,00</p>
+          </div>
+          <div class="showcase-cart-item">
+            <img class="showcase-cart-img" src="./assets/img/example.jpg" alt="">
+            <p class="showcase-cart-txt">Nome</p>
+            <p class="showcase-cart-price"><b>R$&nbsp;</b>10,00</p>
+          </div>
+          <div class="showcase-cart-total" id="totalCarrinho">
+            <p>TOTAL</p>
+            <p><b>R$&nbsp;</b>10,00</p>
+          </div>
+          <button class="showcase-cart-btn" id="btnFimCarrinho">Finalizar</button>
+        </div>
+      </div>
+    </section>
+    <section id="modal">
+      <div id="finalizaCarrinho" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>COMPRA FINALIZADA</h2>
+          </div>
+          <div class="modal-body">
+            <div class="success-checkmark">
+              <div class="check-icon">
+                <span class="icon-line line-tip"></span>
+                <span class="icon-line line-long"></span>
+                <div class="icon-circle"></div>
+                <div class="icon-fix"></div>
+              </div>
+            </div>
+            <p class="modal-footer">Sua compra foi realizada com sucesso!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <p>Feito com <span class="footer-love">&nbsp;❤&nbsp;</span> por Sérgio Leitão</p>
+      <div class="footer-social">
+        <a href="https://twitter.com/seralterego" target="_blank" class="fab fa-twitter"></a>
+        <a href="https://github.com/seralterego" target="_blank" class="fab fa-github"></a>
+        <a href="https://www.linkedin.com/in/sergiomirandaleitao/" target="_blank" class="fab fa-linkedin-in"></a>
+      </div>
+    </footer>
+    <script src="./js/pokeapi.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
