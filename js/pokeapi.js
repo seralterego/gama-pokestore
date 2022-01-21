@@ -8,7 +8,7 @@
 
 const showcase_item = document.getElementById('showcase_item');
 const numeroPokemons = 151;
-const colors = {
+const coresElementos = {
   fire: '#FDDFDF',
   grass: '#DEFDE0',
   electric: '#FCF7DE',
@@ -25,11 +25,10 @@ const colors = {
   normal: '#F5F5F5'
 };
 
-const tiposPrincipais = Object.keys(colors);
-console.log(tiposPrincipais)
+const tiposPrincipais = Object.keys(coresElementos);
 
 const fetchPokemons = async () => {
-  for(let i=1; i<=numeroPokemons; i++) {
+  for(let i=1; i <= numeroPokemons; i++) {
     await pegarPokemon(i);
   }
 }
@@ -46,7 +45,6 @@ function criarCardPokemon(pokemon) {
   elementoPokemon.classList.add('showcase-item');
 
   const tiposPokemon = pokemon.types.map(elementoTipo => elementoTipo.type.name)
-  console.log(tiposPokemon);
   const tipo = tiposPrincipais.find(type => tiposPokemon.indexOf(type) > -1);
 
   const nomePokemon = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
@@ -55,8 +53,8 @@ function criarCardPokemon(pokemon) {
     <img class="showcase-poke-img" src="https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png" alt="">
     <small class="showcase-poke-type"><span>${tipo}</span></small>
     <ul>
-      <li><span class="showcase-poke-txt-1">Nome: </span><span class="showcase-poke-txt-2">${nomePokemon}</span></li>
-      <li><span class="showcase-poke-txt-1">Id: </span><span class="showcase-poke-txt-2 id">${pokemon.id}</span></li>
+      <li class="nome"><span class="showcase-poke-txt-1">${nomePokemon}</span></li>
+      <li><span class="showcase-poke-txt-1">Id: </span><span class="showcase-poke-txt-2 id">#${pokemon.id.toString().padStart(3, '0')}</span></li>
       <li><span class="showcase-poke-txt-1">Height: </span><span class="showcase-poke-txt-2">${pokemon.height}</span></li>
       <li><span class="showcase-poke-txt-1">Weight: </span><span class="showcase-poke-txt-2">${pokemon.weight}</span></li>
     </ul>

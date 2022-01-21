@@ -175,9 +175,10 @@ p.showcase-subtitle {
   font-size: 1em;
   font-weight: 900;
   padding: 3px;
-  border: 1px solid aqua;
+  border: 1px solid #25262E;
   border-radius: 5px;
-  background-color: aqua;
+  background-color: #25262E;
+  color: white;
 }
 
 ul {
@@ -193,8 +194,16 @@ ul>li {
   margin-bottom: 5px;
 }
 
+li.nome {
+  color: white;
+  font-size: 1.2em;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+}
+
 .showcase-poke-txt-1 {
-  float: left;
+  text-align: center;
   color: white;
   font-size: 1em;
 }
